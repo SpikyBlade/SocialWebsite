@@ -53,7 +53,7 @@
    				$id = $row['id'];
    				$body = $row['body'];
    				$added_by = $row['added_by'];
-   				$date_time = $row['date_added'];
+   				$date_time = $row['data_added'];
 
             //Prepare user_to string so it can be included even if not posted to a user
 				if($row['user_to'] == "none") {
