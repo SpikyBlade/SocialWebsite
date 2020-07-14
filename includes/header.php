@@ -1,5 +1,8 @@
 <?php
    require 'config/config.php';
+   include("includes/classes/User.php");
+   include("includes/classes/Post.php");
+   include("includes/classes/Message.php");
 
    if(isset($_SESSION['username'])) {
       $userLoggedIn = $_SESSION['username'];
@@ -22,11 +25,16 @@
 	  crossorigin="anonymous">
 	</script>
    <script src="Assets/js/bootstrap.js"></script>
+   <script src="Assets/js/bootbox.min.js"></script>
+   <script src="Assets/js/wotter.js"></script>
+   <script src="Assets/js/jquery.jcrop.js"></script>
+   <script src="Assets/js/jcrop_bits.js"></script>
 
    <!-- CSS -->
    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
    <link rel="stylesheet" type="text/css" href="Assets/css/bootstrap.css">
    <link rel="stylesheet" type="text/css" href="Assets/css/style.css">
+   <link rel="stylesheet" href="Assets/css/jquery.Jcrop.css" type="text/css" />
 
 </head>
 <body>
@@ -51,7 +59,7 @@
          <a href="#">
             <i class="fa fa-bell-o fa-lg"></i>
          </a>
-         <a href="#">
+         <a href="requests.php">
             <i class="fa fa-users fa-lg"></i>
          </a>
          <a href="#">

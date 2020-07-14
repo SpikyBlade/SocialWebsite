@@ -1,19 +1,3 @@
-<?php
-   require 'config/config.php';
-   include("includes/classes/User.php");
-   include("includes/classes/Post.php");
-
-   if (isset($_SESSION['username'])) {
-      $userLoggedIn = $_SESSION['username'];
-      $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
-      $user = mysqli_fetch_array($user_details_query);
-}
-else {
-   header("Location: register.php");
-}
-
-?>
-
 <html>
 <head>
    <title></title>
@@ -28,6 +12,22 @@ else {
    }
 
    </style>
+
+<?php
+   require 'config/config.php';
+   include("includes/classes/User.php");
+	include("includes/classes/Post.php");
+
+   if (isset($_SESSION['username'])) {
+      $userLoggedIn = $_SESSION['username'];
+      $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
+      $user = mysqli_fetch_array($user_details_query);
+}
+else {
+   header("Location: register.php");
+}
+
+?>
 
    <script>
 		function toggle() {
@@ -144,13 +144,12 @@ else {
          $user_obj = new User($con, $posted_by);
 
          ?>
-
          <div class="comment_section">
-            <a href="<?php echo $posted_by?>" target="_parent"><img src="<?php echo $user_obj->getProfilePic(); ?>" title="<?php echo $posted_by; ?>" style="float:left;" height="30"</a>
-            <a href="<?php echo $posted_by?>" target="_parent"><b><?php echo $user_obj->getFirstAndLastName(); ?></b></a>
-            &nbsp;&nbsp;&nbsp;&nbsp; <?php echo $time_message . "<br>" . $comment_body; ?>
-            <hr>
-         </div>
+				<a href="<?php echo $posted_by?>" target="_parent"><img src="<?php echo $user_obj->getProfilePic();?>" title="<?php echo $posted_by; ?>" style="float:left;" height="30"></a>
+				<a href="<?php echo $posted_by?>" target="_parent"> <b> <?php echo $user_obj->getFirstAndLastName(); ?> </b></a>
+				&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $time_message . "<br>" . $comment_body; ?>
+				<hr>
+			</div>
 
          <?php
 
