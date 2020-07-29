@@ -19,6 +19,7 @@
    <title> Welcome to Wotter</title>
 
    <!-- Javascript -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
    <script
 	  src="https://code.jquery.com/jquery-3.5.1.js"
 	  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
@@ -53,7 +54,7 @@
          <a href="index.php">
             <i class="fa fa-home fa-lg"></i>
          </a>
-         <a href="#">
+         <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')">
             <i class="fa fa-envelope fa-lg"></i>
          </a>
          <a href="#">
@@ -69,6 +70,9 @@
             <i class="fa fa-sign-out fa-lg"></i>
          </a>
       </nav>
+
+      <div class="dropdown_data_window"></div>
+      <input type="hidden" id="dropdown_data_type" value="">
 
    </div>
 
