@@ -11,8 +11,9 @@ $error_array = array(); //Holds error messages
 
 if(isset($_POST['register_button'])){
 
-	//Registration form values
-
+/***************************************
+	    Registration form values
+***************************************/
 	//First name
 	$fname = strip_tags($_POST['reg_fname']); //Remove html tags
 	$fname = str_replace(' ', '', $fname); //remove spaces
