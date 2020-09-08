@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 15. Jul, 2020 00:49 AM
--- Tjener-versjon: 10.4.11-MariaDB
+-- Generation Time: Aug 31, 2020 at 08:44 PM
+-- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur for tabell `comments`
+-- Table structure for table `comments`
 --
 
 CREATE TABLE `comments` (
@@ -40,7 +40,7 @@ CREATE TABLE `comments` (
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur for tabell `friend_requests`
+-- Table structure for table `friend_requests`
 --
 
 CREATE TABLE `friend_requests` (
@@ -52,7 +52,7 @@ CREATE TABLE `friend_requests` (
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur for tabell `likes`
+-- Table structure for table `likes`
 --
 
 CREATE TABLE `likes` (
@@ -64,7 +64,7 @@ CREATE TABLE `likes` (
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur for tabell `messages`
+-- Table structure for table `messages`
 --
 
 CREATE TABLE `messages` (
@@ -81,7 +81,24 @@ CREATE TABLE `messages` (
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur for tabell `posts`
+-- Table structure for table `notifications`
+--
+
+CREATE TABLE `notifications` (
+  `id` int(11) NOT NULL,
+  `user_to` varchar(50) NOT NULL,
+  `user_from` varchar(50) NOT NULL,
+  `message` text NOT NULL,
+  `link` varchar(100) NOT NULL,
+  `datetime` datetime NOT NULL,
+  `opened` varchar(3) NOT NULL,
+  `viewed` varchar(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posts`
 --
 
 CREATE TABLE `posts` (
@@ -92,13 +109,25 @@ CREATE TABLE `posts` (
   `data_added` datetime NOT NULL,
   `user_closed` varchar(3) NOT NULL,
   `deleted` varchar(3) NOT NULL,
-  `likes` int(11) NOT NULL
+  `likes` int(11) NOT NULL,
+  `image` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur for tabell `users`
+-- Table structure for table `trends`
+--
+
+CREATE TABLE `trends` (
+  `title` varchar(50) NOT NULL,
+  `hits` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -145,6 +174,12 @@ ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `notifications`
+--
+ALTER TABLE `notifications`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
@@ -182,6 +217,12 @@ ALTER TABLE `likes`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `notifications`
+--
+ALTER TABLE `notifications`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --

@@ -121,8 +121,8 @@ if($userLoggedIn != $username) {
 
          <div class="message_post">
             <form action="" method="POST">
-               <textarea name='message_body' id='message_textarea' placeholder='Write your message ...'></textarea>;
-               <input type='submit' name='post_message' class='info' id='message_submit' value='Send'>;
+               <textarea name='message_body' id='message_textarea' placeholder='Write your message ...'></textarea>
+               <input type='submit' name='post_message' class='info' id='message_submit' value='Send'>
             </form>
          </div>
 
