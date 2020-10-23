@@ -1,9 +1,13 @@
 <?php
-if(isset($_POST['update_details'])) {
+if(isset($_POST['update_details_account'])) {
 
    $first_name = $_POST['first_name'];
    $last_name = $_POST['last_name'];
    $email = $_POST['email'];
+   $address = $_POST['address'];
+   $gender = ucfirst($_POST['gender']);
+   $marital_status = ucfirst($_POST['marital_status']);
+   $country = ucfirst($_POST['country']);
 
    $email_check = mysqli_query($con, "SELECT * FROM users WHERE email='$email'");
    $row = mysqli_fetch_array($email_check);
@@ -12,7 +16,8 @@ if(isset($_POST['update_details'])) {
    if($matched_user == "" || $matched_user == $userLoggedIn) {
       $message = "Details updated!<br><br>";
 
-      $query = mysqli_query($con, "UPDATE users SET first_name='$first_name', last_name='$last_name', email='$email' WHERE username='$userLoggedIn'");
+      $query = mysqli_query($con, "UPDATE users SET first_name='$first_name', last_name='$last_name', email='$email', address='$address',
+         gender='$gender', country='$country', marital_status='$marital_status' WHERE username='$userLoggedIn'");
    } else
       $message = "That email is already in user!<br><br>";
 } else

@@ -100,6 +100,8 @@
                echo '<span class="notification_badge" id="unread_message">' . $num_messages; '</span>';
             ?>
          </a>
+
+         <!-- FIXME: Notification not going away on clicked or checked notifications -->
          <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')">
             <i class="fa fa-bell-o fa-lg"></i>
             <?php
@@ -114,7 +116,7 @@
                echo '<span class="notification_badge" id="unread_requests">' . $num_requests; '</span>';
             ?>
          </a>
-         <a href="settings.php">
+         <a href="settings-account.php">
             <i class="fa fa-cog fa-lg"></i>
          </a>
          <a href="includes/handlers/logout.php">

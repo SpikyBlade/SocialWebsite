@@ -250,6 +250,43 @@ textarea:focus {
     border-radius: 100px;
 }
 
+.settings_tab_left {
+   top: -10px;
+   width: 23%;
+   max-width: 240px;
+   min-width: 130px;
+   height: 100%;
+   float: left;
+   position: relative;
+   background-color: #37B0E9;
+   border-right: 10px solid #83D6Fe;
+   color: #CBEAF8;
+   margin-right: 16px;
+}
+
+.settings_tab_left_buttons {
+   margin: 15px;
+   padding: 30px;
+}
+
+.settings_tab_left input[type="submit"] {
+   width: 84%;
+   height: 30px;
+   border-radius: 5px;
+   margin: 7px 0 0 7px;
+   border: none;
+   color: #fff;
+}
+
+.settings_tab_left input[type="submit"]:hover {
+   width: 95%;
+   height: 30px;
+   border-radius: 5px;
+   margin: 7px 0 0 7px;
+   border: none;
+   color: #fff;
+}
+
 .profile_info {
    display: list-item;
    background-color: #2980b9;
@@ -595,4 +632,18 @@ textarea:focus {
    max-width: 100%;
    display: block;
    margin: 5px auto;
+}
+
+.about_me_form {
+   width: 100%;
+}
+
+. {
+   width: 81%;
+   height: 60px;
+   border-radius: 3px;
+   margin-right: 5px;
+   border: 1px solid #D3D3D3;
+   font-size: 12px;
+   padding: 5px;
 }

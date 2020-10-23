@@ -56,7 +56,9 @@ if(isset($_POST['post_message'])) {
       <div class="profile_info">
          <p><?php echo "Posts: " . $user_array['num_posts']; ?></p>
          <p><?php echo "Likes: " . $user_array['num_likes']; ?></p>
-         <p><?php echo "Friends: " . $num_friends?></p>
+         <p><?php echo "Friends: " . $num_friends?></p><br>
+         <p><?php echo "Gender: " . $user_array['gender']; ?><p>
+         <p><?php echo "Address: <br> " . $user_array['address']; ?></p>
       </div>
 
       <form action="<?php echo $username; ?>" method="POST">
@@ -83,6 +85,8 @@ if(isset($_POST['post_message'])) {
             }
          ?>
       </form>
+   <!-- TODO: Create a pop up box similiar to the " Post something " just make it have a discription of the user -->
+   <input type="submit" class="deep_blue" data-toggle="modal" data-target="#" value="More Info">
 
    <input type="submit" class="deep_blue" data-toggle="modal" data-target="#post_form" value="Post Something">
 

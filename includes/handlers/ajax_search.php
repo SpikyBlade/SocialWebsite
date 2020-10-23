@@ -17,7 +17,7 @@ else if(count($names) == 2)
 else
 	$usersReturnedQuery = mysqli_query($con, "SELECT * FROM users WHERE (first_name LIKE '$names[0]%' OR last_name LIKE '$names[0]%') AND user_closed='no' LIMIT 8");
 
-
+// ERROR: Mutual friends variable undefined when searching some names. Specificly on line 29 and 40.
 if($query != ""){
 
 	while($row = mysqli_fetch_array($usersReturnedQuery)) {

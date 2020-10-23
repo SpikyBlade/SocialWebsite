@@ -15,16 +15,14 @@ else {
 		<div class="user_details_left_right">
 			<a href="<?php echo $userLoggedIn; ?>">
 			<?php
-			echo $user['first_name'] . " " . $user['last_name'];
-
+				echo $user['first_name'] . " " . $user['last_name'];
 			 ?>
 			</a>
-			
-			<!-- FIXME: Styling of the likes in the single post page -->
-			<br>
-			<?php echo "Posts: " . $user['num_posts']. "<br>";
-			echo "Likes: " . $user['num_likes'];
 
+			<!-- FIXME: Styling of the likes in the single post page -->
+			<?php
+				echo "Posts: " . $user['num_posts']. "<br>";
+				echo "Likes: " . $user['num_likes'];
 			?>
 		</div>
 
