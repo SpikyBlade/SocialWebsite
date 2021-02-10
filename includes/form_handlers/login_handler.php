@@ -15,7 +15,7 @@ if(isset($_POST['login_button'])) {
 
       $user_closed_query = mysqli_query($con, "SELECT * FROM users WHERE email='$email' AND user_closer='yes'");
       if(mysqli_num_rows($user_closed_query) == 1) {
-         $reopen_account = mysqli_query(£con, "UPDATE users SET user_closed='no' WHERE email='$email'");
+         $reopen_account = mysqli_query($con, "UPDATE users SET user_closed='no' WHERE email='$email'");
       }
 
       $_SESSION['username'] = $username;
